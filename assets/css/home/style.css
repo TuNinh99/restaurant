@@ -1,0 +1,760 @@
+/* 0. roots  */
+:root{
+    --color_back_footer: #222222;
+    --color_back_header: #110e0e;
+    --color_body: #585858;
+    --color_white: #ffffff;
+    --color_red_fresh: rgba(176,0,0,1);
+    --color_red_other: #b00000;
+    --color_gray: #aaaaaa;
+    --color_back_section: #edeae6;
+    --size_18: 18px;
+}
+/* 1. setting  */
+html, body{
+    width: 100%;
+    height: auto;
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+    color: var(--color_body);
+    background: var(--color_body);
+    line-height: 1.6;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
+    box-sizing: border-box;
+    margin: 0;
+    overflow-x: hidden;
+}
+*{
+    padding: 0px;
+    margin: 0px;
+}
+h1, h2, h3, h4, h5, h6, nav, ul, li, a, footer{
+    font-family: 'Montserrat', sans-serif;
+}
+li{
+    list-style: none;
+}
+a, a:hover{
+    color: var(--color_white);
+    text-decoration: none;
+}
+i.fa{
+    font-size: 10px;
+    padding: 0px 5px;
+}
+footer{
+    color: var(--color_gray);
+}
+html, body, header,section, footer{
+    width: 100%;
+}
+/* 2. Header  */
+    /* menu top  */
+header .menu{
+    width: 100%;
+}
+header .menu .menu__top{
+    width: 100%;
+    height: auto;
+    background: var(--color_back_header);
+    /* display: flex; */
+}
+header .menu .menu__top .menu__top-logo{
+    height: auto;
+    display: block;
+    margin-left: -15px;
+}
+header .menu .menu__top .menu__top-logo img{
+    max-width: 220px;
+    font-size: 30px;
+    line-height: 1em;
+    margin: 22px 0px;
+}
+header .menu .menu__top .menu__top-contact{
+    width: 100%;
+    height: 100%;
+    margin-left: 22px;
+    position: relative;
+}
+header .menu .menu__top .menu__top-contact ul{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+header .menu .menu__top .menu__top-contact ul li{
+    color: var(--color_white);
+    margin-left: 20px;
+    font-size: 15px;
+    transition: all 0.6s;
+}
+header .menu .menu__top .menu__top-contact ul li i{
+    font-size: 16px;
+}
+header .menu .menu__top .menu__top-contact ul li:hover a{
+    color: var(--color_red_other);
+}
+header .menu .menu__top .top__icon{
+    background: var(--color_red_fresh);
+    border-radius: 2px;
+    z-index: 10;
+    position: absolute;
+    top: 30px;
+    right: 0px;
+    opacity: 0;
+    visibility: hidden;
+}
+header .menu .menu__top .top__icon i{
+    font-size: 20px;
+    color: var(--color_white);
+    padding: 8px 10px;
+} 
+    /* menu bottom  */
+header .menu .menu__bottom{
+    width: 100%;
+    height: 59px;
+    background: var(--color_red_fresh);
+}
+header .menu .menu__bottom ul{
+    width: 100%;
+    /* height: 100%; */
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0px;
+}
+header .menu .menu__bottom ul li{
+    text-transform: capitalize;
+    display: block;
+    padding: 17px 20px;
+    cursor: pointer;
+    transition: all 0.4s;
+}
+header .menu .menu__bottom ul li:hover{
+    background: var(--color_white);
+}
+header .menu .menu__bottom ul li a{
+    color: var(--color_white);
+    display: flex;
+    align-items: center;
+}
+header .menu .menu__bottom ul li:hover a,
+header .menu .menu__bottom ul li.menu__active a{
+    color: var(--color_red_fresh);
+}
+header .menu .menu__bottom ul li.menu__active{
+    background: var(--color_white);
+}
+    /* dropdwon menu  */
+header .menu .menu__bottom ul li.menu__bottom-dropdown{
+    position: relative;
+    z-index: 10;
+}
+header .menu .menu__bottom ul li.menu__bottom-dropdown .dropdown__dropbtn{
+    color: var(--color_white);
+    transition: all 0.4s linear;
+}
+header .menu .menu__bottom ul li.menu__bottom-dropdown:hover .dropdown__dropbtn{
+    color: var(--color_red_fresh);
+}
+header .menu .menu__bottom ul li.menu__bottom-dropdown .dropdown__content{
+    display: block;
+    width: 200px;
+    position: absolute;
+    top: 59px;
+    left: 0px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s linear;
+}
+header .menu .menu__bottom ul li.menu__bottom-dropdown:hover .dropdown__content{
+    visibility: visible;
+    opacity: 1;
+    animation: motion__dropdown 0.4s ease;
+}
+@keyframes motion__dropdown{
+    from{
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(50px);
+    }
+    to{
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+}
+header .menu .menu__bottom ul li.menu__bottom-dropdown .dropdown__content a{
+    background: var(--color_red_fresh);
+    color: var(--color_white);
+    padding: 20px 10px;
+    transition: all 0.5s linear;
+}
+header .menu .menu__bottom ul li.menu__bottom-dropdown .dropdown__content a:hover{
+    color: var(--color_red_fresh);
+    background: var(--color_white);
+}
+
+/*
+header .menu .menu__bottom ul li.menu__bottom-dropdown:hover .dropdown__content{
+    opacity: 1;
+    visibility: visible;
+    animation: dropdown__motion 0.4s ease;
+}
+@keyframes dropdown__motion{
+    from{
+        transform: translateY(50px);
+    }
+    to{
+        transform: translateY(0);
+    }
+}
+header .menu .menu__bottom ul li.menu__bottom-dropdown .dropdown__content ul{
+    display: block;
+    position: absolute;
+    top: 17px;
+    left: -20px;
+    width: 200px;
+}
+
+header .menu .menu__bottom ul li.menu__bottom-dropdown .dropdown__content ul li{
+    background: var(--color_red_fresh);
+    transition: all 0.4s ease;
+}
+header .menu .menu__bottom ul li.menu__bottom-dropdown .dropdown__content ul li{
+    background: var(--color_red_fresh);
+    transition: all 0.4s ease;
+}
+header .menu .menu__bottom ul li.menu__bottom-dropdown .dropdown__content ul li a{
+    color: var(--color_white);
+}
+header .menu .menu__bottom ul li.menu__bottom-dropdown .dropdown__content ul li:hover{
+    background: var(--color_white);
+}
+header .menu .menu__bottom ul li.menu__bottom-dropdown .dropdown__content ul li:hover a{
+    color: var(--color_red_fresh);
+} */
+
+/* 3. banner  */
+.banner{
+    width: 100%;
+    height: 360px;
+    position: relative;
+}
+.banner .banner__slide{
+    width: 100%;
+    height: 100%;
+}
+.banner .banner__slide ul{
+    width: 100%;
+    height: 100%;
+}
+.banner .banner__slide ul li{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+}
+.banner .banner__slide ul li.slide__active{
+    opacity: 1;
+    visibility: visible;
+}
+.banner .banner__slide ul li img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.banner .banner__btn {
+    position: absolute;
+    top: 80%;
+    left: 21%;
+    background: rgba(0,0,0,0.5);
+    display: block;
+    padding: 10px 20px;
+}
+.banner .banner__btn a{
+    display: flex;
+    color: var(--color_white);
+    font-weight: 400;
+    align-items: center;
+    font-size: var(--size_18);
+}
+.banner .banner__btn a i{
+    display: block;
+    padding: 0px 15px;
+}
+    /* End banner  */
+/* 4. Services  */
+.services{
+    padding: 70px 0px 70px 0px;
+    background: var(--color_back_section);
+}
+/* .services .row{
+    margin-left: -40px;
+    margin-right: -40px;
+    display: flex;
+    justify-content: space-around;
+} */
+.services .services__item{
+    height: 400px;
+    background: var(--color_white);
+    position: relative;
+    text-align: center;
+    padding-bottom: 10px;
+    z-index: 0;
+}
+.services .services__item:before{
+    content: "";
+    border: 1px solid var(--color_back_section);
+    position: absolute;
+    top: 5px; 
+    bottom: 5px;
+    right: 5px;
+    left: 5px;
+    z-index: -1;
+}
+.services .services__item .services__item-title{
+    font-size: var(--size_18);
+    color: var(--color_white);
+    position: relative;
+    top: -20px;
+    z-index: 1;
+    padding: 6px;
+    text-align: center;
+    margin: 0px 30px 11px 30px;
+}
+.services .services__item .services__item-title:before{
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 1px;
+    bottom: 1px;
+    left: 1px;
+    right: 1px;
+    border: 1px solid transparent;
+    background: var(--color_red_other);
+}
+.services .services__item .services__item-content{
+    max-width: 300px;
+    text-align: left;
+    margin: 0px 7%;
+}
+.services .services__item .services__item-content .content__img{
+    max-width: 100%;
+    height: 145px;
+    position: relative;
+    z-index: 20;
+}
+.services .services__item .services__item-content .content__img::before{
+    content: "";
+    position: absolute;
+    top: 1px;
+    bottom: 1px;
+    left: 1px;
+    right: 1px;
+    border: 1px solid #d7d7d7;
+}
+.services .services__item .services__item-content .content__img img{
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    object-fit: cover;
+}
+.services .services__item .services__item-content p{
+    /* padding: 30px 0px; */
+    margin: 20px 0px;
+    font-size: 14px;
+    line-height: 25px;
+
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4; 
+}
+.services .services__item .services__item-content  .content__btn{
+    background: var(--color_red_other);
+    font-size: 14px;
+    margin-bottom: 10px;
+    width: 127px;
+    display: block;
+    padding: 5px 20px;
+    text-transform: capitalize;
+    z-index: 2;
+    border: 1px solid var(--color_red_fresh);
+    transition: all 0.4s;
+}
+.services .services__item .services__item-content .content__btn:hover{
+    background: var(--color_white);
+    color: var(--color_red_fresh);
+    border: 1px solid var(--color_red_fresh);
+}
+/* 5. footer */
+footer .footer{
+    background: var(--color_back_footer);
+}
+footer .footer .footer__item{
+    display: block;
+    padding: 40px 0px 20px 0px;
+}
+footer .footer .footer__item h3{
+    font-size: 24px;
+    color: var(--color_white);
+}
+footer .footer .footer__item .footer__item-content{
+    padding-top: 15px;
+}
+footer .footer .footer__item .footer__item-content .content__info{
+   font-size: 14px;
+}
+footer .footer .footer__item .footer__item-content .content__info i,
+footer .footer .footer__item .footer__item-content .content__info .network a i{
+    color: var(--color_white);
+    font-size: 18px;
+    padding-right: 10px;
+}
+footer .footer .footer__item .footer__item-content .content__info .network a i{
+    background: var(--color_white);
+    color: var(--color_back_header);
+    width: 25px;
+    height: 25px;
+    margin-right: 5px;
+    border-radius: 3px;
+    display: inline-block;
+    padding: 5px 5px;
+    transition: all 0.4s;
+}
+footer .footer .footer__item .footer__item-content .content__info .network a:hover i{
+    background: var(--color_red_fresh);
+    color: var(--color_white);
+}
+footer .footer .footer__item .footer__item-img{
+    max-width: 270px;
+    max-height: 135px;
+    display: block;
+    padding-top: 20px;
+}
+footer .footer .footer__item .footer__item-img img{
+    width: 100%;
+    height: 100%;
+}
+footer .footer .footer__item .footer__item-content p strong{
+    text-transform: capitalize;
+    color: var(--color_red_fresh);
+    font-weight: 500;
+}
+footer .footer .footer__item .footer__item-content p a,
+footer .footer .footer__item .footer__item-content ul li a{
+    color: var(--color_red_fresh);
+}
+footer .footer .footer__item .footer__item-content ul li a.content__day{
+    color: rgba(255, 255, 255, 0.877);
+    font-size: 12px;
+    font-style: italic;
+    transition: all 0.4s;
+}
+footer .footer .footer__item .footer__item-content ul li a.content__day:hover{
+    color: var(--color_red_fresh);
+}
+
+/* 6. Responsive  */
+@media only screen and (width: 1600px){
+    .banner .banner__btn{
+        left: 9%;
+    }
+}
+
+@media only screen and (width: 1366px){
+    .banner .banner__btn{
+        left: 9%;
+    }
+}
+
+@media only screen and (width: 1200px){
+    .banner .banner__btn{
+        left: 4%;
+    }
+}
+@media (max-width: 1199px){
+    header .menu .menu__top .menu__top-contact ul li{
+        font-size: 14px;
+    }
+    header .menu .menu__bottom ul li a{
+        font-size: 14px;
+    }
+    header .menu .menu__bottom{
+        height: 56px;
+    }
+    .banner .banner__btn{
+        left: 11%;
+    }
+    footer .footer .footer__item h3{
+        font-size: 20px;
+    }
+    
+}
+
+@media (max-width: 1024px){
+    /* Menu  */
+    header .menu,
+    header .menu .menu__top{
+        height: 140px;
+    }
+    /* header .menu .menu__top.menu__fixed{
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 10;
+        background: var(--color_body);
+        height: 100px;
+    } */
+    header .menu .menu__top .menu__top-contact{
+        display: none;
+    }
+    header .menu .menu__top .menu__top-logo{
+        margin-left: -15px;
+    }
+    header .menu .menu__top .top__icon{
+        opacity: 1;
+        visibility: visible;
+        margin-right: 25px;
+    }
+    header .menu .menu__bottom{
+        display: block;
+        width: 100%;
+        height: 0;
+        padding: 0px;
+        margin-top: -40px;
+        opacity: 1;
+        position: relative;
+        overflow: hidden;
+        transition: height 0.5s ease;
+        z-index: 30;
+        background: var(--color_white);
+    }
+    header .menu .menu__bottom ul{
+        display: block;
+        padding: 20px;
+    }
+    header .menu .menu__bottom ul li{
+        width: 100%;
+        border-top: 1px solid var(--color_gray);
+        line-height: 15px;
+    }
+        /* RESPONSIVE DROP MENU  */
+    header .menu .menu__bottom ul li.menu__bottom-dropdown .dropdown__dropbtn{
+        color: var(--color_red_fresh);
+        font-size: 14px;
+    }
+
+    header .menu .menu__bottom ul li.menu__bottom-dropdown .dropdown__content{
+        height: 0;
+        position: static;
+        /* visibility: hidden;
+        opacity: 0; */
+        /* display: none; */
+        margin: 10px 0px -10px 10px;
+    }
+    header .menu .menu__bottom ul li.menu__bottom-dropdown:hover .dropdown__content{
+        height: auto;
+        /* visibility: visible;
+        opacity: 1; */
+    }
+    header .menu .menu__bottom ul li.menu__bottom-dropdown .dropdown__content a{
+        border-top: 1px solid var(--color_back_section);
+        width: 100%;
+        color: var(--color_red_fresh);
+        background: var(--color_white);
+        position: relative;
+    }
+        /* END RESPONSIVE DROP MENU */ 
+    header .menu .menu__bottom ul li a{
+        color: var(--color_red_fresh);
+    }
+    header .menu .menu__bottom ul li.menu__active{
+        margin-bottom: 2px;
+        border-radius: 5px;
+        background: var(--color_red_fresh);
+    }
+    header .menu .menu__bottom ul li.menu__active a{
+        color: var(--color_white);
+    }
+
+     /* Banner  */
+     .banner{
+         margin-top: -40px;
+         height: 300px;
+     }
+     .banner .banner__btn{
+        left: 3%;
+        padding: 10px 20px;
+     }
+
+     /* Services  */
+     .services{
+         padding: 20px 0px 40px 0px;
+     }
+     .services .services__item{
+         margin-top: 40px;
+     }
+     .services .services__item .services__item-content .content__img{
+         height: 120px;
+     }
+     /* Footer  */
+     footer .footer .footer__item{
+         margin-left: 30px;
+     }
+}
+
+@media (max-width: 600px){
+    header .menu, 
+    header .menu .menu__top{
+        height: 140px;
+    }
+    .services .services__item .services__item-title{
+        font-size: 14px;
+        font-weight: 600;
+    }
+    .banner{
+        height: 200px;
+    }
+    .banner .banner__btn{
+        top: 75%;
+    }
+    .banner .banner__btn a{
+        font-size: 14px;
+    }
+    
+    footer .footer .footer__item{
+        margin: 0px;
+    }
+}
+
+@media (max-width: 480px){
+    header .menu, header .menu .menu__top{
+        height: 130px;
+    }
+    header .menu .menu__top .menu__top-logo{
+        margin: 10px 0 0 10px;
+    }
+    header .menu .menu__top .menu__top-logo img{
+        width: 150px;
+    }
+    header .menu .menu__top .menu__top-contact .top__icon{
+        top: -60px;
+    }
+
+    .banner .banner__btn a{
+        font-size: 12px;
+    }
+    .banner .banner__btn a i{
+        padding: 0px;
+    }
+    .banner .banner__btn a i.fa{
+        padding-left: 2px;
+        font-size: 7px;
+    }
+    .services .services__item .services__item-content{
+        max-width: 100%;
+    }
+    .services .services__item .services__item-content .content__img{
+        height: 160px;
+    }
+    footer .footer .footer__item{
+        margin: 20px;
+        padding: 0px 0px 10px 0px;
+    }
+    footer .footer .footer__item h3{
+        font-size: 20px;
+        margin-bottom: -10px;
+    }
+    footer .footer .footer__item .footer__item-content .content__info{
+        font-size: 14px;
+        margin-bottom: 5px;
+    }
+}
+@media (max-width:385px){
+    header .menu .menu__top .menu__top-logo{
+        margin-left: 5px;
+    }
+    header .menu .menu__top .menu__top-logo img{
+        width: 150px;
+    }
+    header .menu .menu__top .menu__top-contact .top__icon{
+        top: -55px;
+    }
+    header .menu .menu__top .menu__top-contact .top__icon i{
+        padding: 5px 7px;
+        font-size: 20px;
+    }
+    header .menu .menu__bottom ul{
+        padding: 20px;
+    }
+    header .menu .menu__bottom ul li{
+        line-height: 0px;
+    }
+    
+    .banner{
+        height: 120px;
+    }
+    .banner .banner__btn{
+        top: 70%;
+        left: 3%;
+        padding: 5px;
+    }
+    .banner .banner__btn a{
+        font-size: 9px;
+    }
+    .banner .banner__btn a i{
+        padding: 0px;
+    }
+    .banner .banner__btn a i.fa{
+        padding-left: 2px;
+        font-size: 7px;
+    }
+
+    .services .services__item{
+        height: 370px;
+    }
+    .services .services__item .services__item-content .content__img{
+        height: 120px;
+    }
+    .services .services__item .services__item-content .content__btn{
+        width: 120px;
+    }
+    footer .footer .footer__item h3{
+        font-size: 16px;
+        margin-bottom: 0px;
+    }
+    footer .footer .footer__item .footer__item-content{
+        font-size: 12px;
+    }
+    footer .footer .footer__item .footer__item-content p{
+        margin-bottom: 5px;
+    }
+    footer .footer .footer__item .footer__item-content ul li a.content__day{
+        font-size: 9px;
+    }
+}
+
+/* 7. class add animation  */
+    /* menu fixed  */
+.menu .menu__top.menu__top_hidden{
+    display: none;
+}
+.menu .menu__bottom.menu__bottom_fixed{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 100;
+    height: auto;
+}
+    /* menu responsive click */
+.menu .menu__bottom.menu__bottom_display{
+    transition: 0.5s;
+    display: block;
+}
